@@ -10,6 +10,14 @@ version: 2.1
  # welcome:
     # Run the welcome/run job in its own container
 jobs:
+
+  build:
+    working_directory: ~/hello-sts
+    docker:
+      - image: circleci/node:8.11.1
+    steps:
+      - checkout
+
   deploy:
     machine:
       enabled: true
