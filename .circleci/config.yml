@@ -22,10 +22,12 @@ jobs:
     machine:
       enabled: true
     steps:
-      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "0d:f3:cf:da:11:33:00:29:58:c0:7e:4c:f8:bd:74:9d"
       - run:
           name: Deploy over SSH
-          command: ssh -p 22 -i ~/.ssh/id_rsa centos@3.15.28.221 "cd /home/circle/poc/"; sudo git pull;
+          command: ssh -p 22 centos@3.15.28.221 "cd /home/circle/poc/"; sudo git pull;
 workflows:
   version: 2
   build-and-deploy:
