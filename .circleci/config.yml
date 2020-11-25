@@ -25,7 +25,7 @@ jobs:
       - checkout
       - run:
           name: Deploy over SSH
-          command: ssh -p 22 centos@ip-172-31-46-39.us-east-2.compute.internal "cd /home/circle/poc/"; sudo git pull;
+          command: ssh -p 22 centos@172.31.46.39 "cd /home/circle/poc/"; sudo git pull;
 workflows:
   version: 2
   build-and-deploy:
