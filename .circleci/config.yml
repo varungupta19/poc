@@ -26,3 +26,11 @@ jobs:
       - run:
           name: Deploy over SSH
           command: ssh -p 22 centos@centos "cd /home/circle/poc/; sudo git pull;
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
