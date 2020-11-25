@@ -1,0 +1,18 @@
+steps:
+- script: |
+   git clone https://github.com/varungupta19/big.git
+   cd big
+   git submodule update --init
+   cd $(Build.SourcesDirectory)\big\small
+   git checkout main
+   git pull
+   cd $(Build.SourcesDirectory)\big
+   git config user.name "varungupta19"
+   git config user.email "contactvarungupta@gmail.com"
+   git add .
+   git commit -m "submodule commit"
+   git push https://2466290e1213bdf2e281fd85692bfd8e9821a18e@github.com/varungupta19/big.git main
+  displayName: 'Git Commands'
+  
+  
+  "cd /home/circle/poc"; "pwd"; "hostname"; sudo git pull; EOF
