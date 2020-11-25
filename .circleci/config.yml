@@ -27,7 +27,7 @@ jobs:
             - "0d:f3:cf:da:11:33:00:29:58:c0:7e:4c:f8:bd:74:9d"
       - run:
           name: Deploy over SSH
-          command: ssh -p 22 centos@3.15.28.221 -v 'cd /home/circle/poc && sudo git pull' 
+          command: ssh -p 22 centos@3.15.28.221 -v 'cd /home/circle/poc $$ hostname $$ pwd && sudo git pull' 
 #          |
 #                   pwd
 #                   hostname
